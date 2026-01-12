@@ -1,4 +1,4 @@
-# C# 3.0 Features – Sample Projects
+# C# 3.0 Features - Sample Projects
 
 This repository demonstrates the language features introduced in **C# version 3.0**.  
 Each project (`P46` … `P56`) shows one feature with small runnable code.
