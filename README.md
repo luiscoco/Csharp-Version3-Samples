@@ -1,23 +1,22 @@
 # C# 3.0 Features – Sample Projects
 
 This repository demonstrates the language features introduced in **C# version 3.0**.  
-Each project (`P42` … `P52`) shows one feature with small runnable code.
+Each project (`P46` … `P56`) shows one feature with small runnable code.
 
 ---
 
-## 🚀 Features & Samples
+## Features & Samples
 
-### 1) Implicitly Typed Locals – `var` (`P42_Var`)
+### P46_Var - Implicitly Typed Locals
 - **What’s new**: The `var` keyword lets the compiler infer the type of local variables from the initializer.  
 - **Example**:
   ```csharp
   var n = 42;                 // int
   var words = new[] { "a", "b" };  // string[]
   ```
-
 ---
 
-### 2) Object & Collection Initializers (`P43_ObjectCollectionInitializers`)
+### P47_ObjectCollectionInitializers - Object & Collection Initializers
 - **What’s new**: Initialize objects and collections more concisely inline.  
 - **Example**:
   ```csharp
@@ -25,10 +24,9 @@ Each project (`P42` … `P52`) shows one feature with small runnable code.
   var list = new List<int> { 1, 2, 3 };
   var dict = new Dictionary<int,string> { [1] = "one", [2] = "two" };
   ```
-
 ---
 
-### 3) Auto‑implemented Properties (`P44_AutoProperties`)
+### P48_AutoProperties - Auto‑implemented Properties
 - **What’s new**: Properties where the compiler provides the backing field automatically.  
 - **Example**:
   ```csharp
@@ -38,39 +36,35 @@ Each project (`P42` … `P52`) shows one feature with small runnable code.
       public int Age { get; private set; }
   }
   ```
-
 ---
 
-### 4) Anonymous Types (`P45_AnonymousTypes`)
+### P49_AnonymousTypes - Anonymous Types
 - **What’s new**: Create lightweight, unnamed types on the fly with properties.  
 - **Example**:
   ```csharp
   var proj = new { Id = 7, Title = "LINQ" };
   Console.WriteLine(proj.Title);  // "LINQ"
   ```
-
 ---
 
-### 5) Lambda Expressions (`P46_Lambdas`)
+### P50_Lambdas - Lambda Expressions
 - **What’s new**: Inline functions for delegates/functional style.  
 - **Example**:
   ```csharp
   var evens = Enumerable.Range(1, 10).Where(x => x % 2 == 0);
   ```
-
 ---
 
-### 6) Expression Trees (`P47_ExpressionTrees`)
+### P51_ExpressionTrees - Expression Trees
 - **What’s new**: Represent code as data (expressions) which can be compiled or inspected.  
 - **Example**:
   ```csharp
   Expression<Func<int, bool>> pred = x => x > 10;
   Console.WriteLine(pred.Body); // prints something like "(x > 10)"
   ```
-
 ---
 
-### 7) Extension Methods (`P48_ExtensionMethods`)
+### P52_ExtensionMethods - Extension Methods
 - **What’s new**: Add methods to existing types without modifying the type or subclassing.  
 - **Example**:
   ```csharp
@@ -81,10 +75,9 @@ Each project (`P42` … `P52`) shows one feature with small runnable code.
 
   Console.WriteLine("hello world".WordCount()); // 2
   ```
-
 ---
 
-### 8) Partial Methods (`P49_PartialMethods`)
+### P53_PartialMethods - Partial Methods
 - **What’s new**: In partial classes, declare “hooks” that may or may not have implementations; unused ones cost nothing.  
 - **Example**:
   ```csharp
@@ -99,19 +92,17 @@ Each project (`P42` … `P52`) shows one feature with small runnable code.
       partial void OnCreated() { Console.WriteLine("Created"); }
   }
   ```
-
 ---
 
-### 9) LINQ to Objects – Method Syntax (`P50_LINQBasic`)
+### P54_LINQBasic - LINQ to Objects - Method Syntax 
 - **What’s new**: Use extension methods like `.Where()`, `.Select()`, etc., to query collections in a fluent style.  
 - **Example**:
   ```csharp
   var top3 = numbers.Where(n => n > 10).OrderBy(n => n).Take(3);
   ```
-
 ---
 
-### 10) LINQ Query Expressions (`P51_QueryExpressions`)
+### P55_QueryExpressions - LINQ Query Expressions
 - **What’s new**: SQL‑like syntax for queries that map to LINQ methods under the hood.  
 - **Example**:
   ```csharp
@@ -120,10 +111,9 @@ Each project (`P42` … `P52`) shows one feature with small runnable code.
           orderby n
           select n;
   ```
-
 ---
 
-### 11) LINQ Grouping (`P52_LINQGrouping`)
+### P56_LINQGrouping - LINQ Grouping
 - **What’s new**: Group elements by key, then iterate groups.  
 - **Example**:
   ```csharp
@@ -131,10 +121,9 @@ Each project (`P42` … `P52`) shows one feature with small runnable code.
                group w by w[0] into g
                select new { Letter = g.Key, Count = g.Count() };
   ```
-
 ---
 
-## ▶ Build & Run
+## Build & Run
 
 From the repo root:
 ```bash
@@ -146,7 +135,7 @@ dotnet run --project P42_Var
 
 ---
 
-## ✅ Why These Features Mattered
+## Why These Features Mattered
 
 - Brought LINQ to the language, enabling expressive queries over collections.  
 - Reduced boilerplate: `var`, auto-properties, object initializers, anonymous types.  
